@@ -1,0 +1,23 @@
+@import url(http://fonts.googleapis.com/css?family=Iceland);
+header {
+	background:transparent url(img/contact.png) no-repeat;
+	padding:20px 0px 20px 200px;
+	font-family: 'Iceland';
+}
+
+header a {
+	display: inline-block;
+	color:#000;
+	-webkit-transition:color .25s;
+}
+
+header a:hover {
+	-webkit-transform:rotate(2deg);
+	color:#499C13;
+	text-decoration:none;
+}
+
+header h2 {
+	font-size:22px;
+	color:grey;
+}
