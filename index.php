@@ -11,8 +11,10 @@ require('lib/functions.php');
 <!DOCTYPE html>
 <html>
 	<head>
+		<script src="vendor/jquery-ui-1.10.0.custom/js/jquery-1.9.0.js"></script>
 		<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.css" />
 		<link rel="stylesheet" type="text/css" href="styles.css" />
+		<script src="vendor/bootstrap/js/bootstrap.js"></script>
 		<title>Contacts</title>
 	</head>
 	<body>

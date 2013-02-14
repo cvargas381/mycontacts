@@ -2,7 +2,7 @@
 // Display message if there is one in session data
 if(isset($_SESSION['message'])) {
 	// Display message
-	echo $_SESSION['message'];
+	echo "<div class=\"alert alert-{$_SESSION['message']['type']}\">{$_SESSION['message']['text']}<a class=\"close\" data-dismiss=\"alert\" href=\"#\">&times;</a></div>";
 	// Remove message from session
 	unset($_SESSION['message']);
 }
