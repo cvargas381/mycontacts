@@ -21,3 +21,11 @@ header h2 {
 	font-size:22px;
 	color:grey;
 }
+
+div.controls input.phone {
+	width:27px;
+}
+
+div.controls input.phone2 {
+	width:33px;
+}

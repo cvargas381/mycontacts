@@ -44,7 +44,7 @@ $conn->query($sql);
 $conn->close();
 // Set message
 $_SESSION['message'] = array(
-		'text' => 'Your tournament has been added.',
+		'text' => 'Your contact has been added.',
 		'type' => 'success'
 		);
 // Set location header

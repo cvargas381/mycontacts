@@ -14,19 +14,37 @@ extract($contact);
 $conn->close();
 
 ?>
-<form action="update.php" method="post">
-	<label>First Name</label>
-	<input type="text" name="contact_firstname" value="<?php echo $contact_firstname ?>"/>
-	<br/>
-	<label>Last Name</label>
-	<input type="text" name="contact_lastname" value="<?php echo $contact_lastname ?>" />
-	<br/>
-	<label>Email</label>
-	<input type="text" name="contact_email" value="<?php echo $contact_email ?>" />
-	<br/>
-	<label>Phone Number</label>
-	<input type="text" name="contact_phone" value="<?php echo $contact_phone ?>" />
-	<br/>
-	<input type="hidden" name="id" value="<?php echo $contact_id ?>"/>
-	<input type="submit" value="Edit" />
+<h2>Edit Contact</h2>
+<form class="form-horizontal" action="./actions/update.php" method="post">
+	<div class="control-group">
+	  <label class="control-label" for="contact_firstname">Name</label>
+	  <div class="controls">
+	    <input type="text" name="contact_firstname" value="<?php echo $contact_firstname ?>"/>
+	  </div>
+	</div>
+	<div class="control-group">
+	  <label class="control-label" for="contact_lastname"></label>
+	  <div class="controls">
+	   <input type="text" name="contact_lastname" value="<?php echo $contact_lastname ?>" />
+	  </div>
+	</div>
+	<div class="control-group">
+	  <label class="control-label" for="contact_email">Email</label>
+	  <div class="controls">
+	    <input type="text" name="contact_email" value="<?php echo $contact_email ?>" />
+	  </div>
+	</div>
+	<div class="control-group">
+	  <label class="control-label" for="contact_phone">Phone Number</label>
+	  <div class="controls">
+	  	{<input class="phone" type="text" name="contact_phone1" value="<?php echo substr($contact_phone,0,3) ?>" />}
+	  	<input class="phone" type="text" name="contact_phone2" value="<?php echo substr($contact_phone,3,3) ?>" />
+	  	<input class="phone2" type="text" name="contact_phone3" value="<?php echo substr($contact_phone,-4) ?>" />
+	  </div>
+	</div>
+	<div class="form-actions">
+		<button type="submit" class="btn btn-warning"><i class="icon-edit icon-white"></i>Edit Contact</button>
+		<a href="./"><button type="button" class="btn">Cancel</button></a>
+	</div> 
+	<?php echo "<input type=\"hidden\" name=\"id\" value=\"$contact_id\" />";?>
 </form>

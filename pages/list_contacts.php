@@ -40,10 +40,9 @@ while(($contact = $results->fetch_assoc()) != null) {
 	echo"	<td>$contact_lastname</td>";
 	echo"	<td><a href=\"mailto:$contact_email\">$contact_email</td>";
 	echo "<td>".format_phone($contact_phone)."</td>";
-	echo "<td><a href=\"pages/form_edit_contact.php?id=$contact_id\">edit</a>";
 	echo '<form style="display:inline;" method="post" action="delete.php">';
 	echo	"<input type=\"hidden\" name=\"id\" value=\"$contact_id\" />";
-	echo	"<input type='submit' value='delete' />";
+	echo "<td class=\"button\"><a href=\"?p=form_edit_contact&id=$contact_id\" class=\"btn btn-warning\"><i class=\"icon-edit icon-white\"></i></a> <a href=\"?p=delete&id=$contact_id\" class=\"btn btn-danger\"><i class=\"icon-trash icon-white\"></i></a></td>";
 	echo 	"</form>";
 	echo 	"</td>";
 	echo"</tr>";
