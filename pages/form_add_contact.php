@@ -23,7 +23,7 @@
 	  <div class="controls">
 	    {<?php echo input('contact_phone1','999',null,'phone span1') ?>}
 	    <?php echo input('contact_phone2','888',null,'phone span1') ?>
-	    <?php echo input('contact_phone3','7777',null,'phone span2') ?>
+	    <?php echo input('contact_phone3','7777',null,'phone2 span2') ?>
 	  </div>
 	</div>
 	<div class="form-actions">

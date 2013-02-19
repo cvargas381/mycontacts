@@ -3,7 +3,7 @@ header {
 	background:transparent url(img/contact.png) no-repeat;
 	padding:20px 0px 20px 200px;
 	font-family: 'Iceland';
-	margin-bottom:5px;
+	height:125px;
 }
 
 header a {
@@ -29,12 +29,4 @@ div.controls input.phone {
 
 div.controls input.phone2 {
 	width:33px;
-}
-
-div.controls input.span1 {
-	width:27px;
-}
-
-div.controls input.span2 {
-	width:35px;
 }
