@@ -12,7 +12,7 @@ function format_phone($phone) {
 * @param String $placeholder
 * @return HTML input element
 */
-function input($name, $placeholder, $value=null) {
+function input($name, $placeholder, $value=null, $class='') {
 	if($value == null && isset($_SESSION['POST'] [$name])) {
 		$value = $_SESSION['POST'] [$name];
 
@@ -20,17 +20,12 @@ function input($name, $placeholder, $value=null) {
 		unset($_SESSION['POST'] [$name]);
 
 		if($value == '') {
-			$class = 'class="error"';
-		} else {
-			$class = '';
-		}
-	} elseif($value != null) {
-		$class = '';
+			$class .= 'error';
+		} 
 	} else {
 		$value = '';
-		$class = '';
 	}
-	return "<input $class type=\"text\" name=\"$name\" placeholder=\"$placeholder\" value=\"$value\" />";
+	return "<input class=\"$class\" type=\"text\" name=\"$name\" placeholder=\"$placeholder\" value=\"$value\" />";
 }
 
 /**

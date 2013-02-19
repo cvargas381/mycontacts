@@ -14,4 +14,4 @@ $_SESSION['message'] = array(
 		'type' => 'danger'
 		);
 // Redirect
-//header('Location:../?p=list_contacts');
+header('Location:../?p=list_contacts');

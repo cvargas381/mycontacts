@@ -40,9 +40,11 @@ while(($contact = $results->fetch_assoc()) != null) {
 	echo"	<td>$contact_lastname</td>";
 	echo"	<td><a href=\"mailto:$contact_email\">$contact_email</td>";
 	echo "<td>".format_phone($contact_phone)."</td>";
-	echo '<form style="display:inline;" method="post" action="delete.php">';
+	echo "<td class=\"button\"><a href=\"?p=form_edit_contact&id=$contact_id\" class=\"btn btn-warning\"><i class=\"icon-edit icon-white\"></i></a>";
+	echo '<form style="display:inline;" method="post" action="actions/delete.php">';
 	echo	"<input type=\"hidden\" name=\"id\" value=\"$contact_id\" />";
-	echo "<td class=\"button\"><a href=\"?p=form_edit_contact&id=$contact_id\" class=\"btn btn-warning\"><i class=\"icon-edit icon-white\"></i></a> <a href=\"?p=delete&id=$contact_id\" class=\"btn btn-danger\"><i class=\"icon-trash icon-white\"></i></a></td>";
+	$onclick = "return confirm('Are you sure you want to delete $contact_firstname $contact_lastname?')";
+	echo	" <button onclick=\"$onclick\" class =\"btn btn-danger\" type=\"submit\"><i class=\"icon-trash icon-white\"</button>";
 	echo 	"</form>";
 	echo 	"</td>";
 	echo"</tr>";
