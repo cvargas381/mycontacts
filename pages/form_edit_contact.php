@@ -42,6 +42,32 @@ $conn->close();
 	  	<input class="phone2" type="text" name="contact_phone3" value="<?php echo substr($contact_phone,-4) ?>" />
 	  </div>
 	</div>
+	<div class="control-group">
+	  <label class="control-label" for="group_id">Group</label>
+	  <div class="controls">
+	  	<?php
+	  	// connect to DB
+	  	$conn = new mysqli(DB_HOST,DB_USER,DB_PASS,DB_NAME);
+
+	  	// Query groups table
+	  	$sql = "SELECT * FROM groups ORDER BY group_name";
+	  	$results = $conn->query($sql);
+
+	  	$selected_group_id = $group_id;
+
+	  	$options[0] = 'Select a group';
+	  	// Loop over result set
+	  	while(($group = $results->fetch_assoc()) != null) {
+	  		extract($group);
+	  		$options[$group_id] = $group_name;
+	  	}
+	  	echo dropdown('group_id', $options, $selected_group_id);
+
+	  	// Close DB connection
+	  	$conn->close();
+	  	?>
+	  </div>
+	</div>
 	<div class="form-actions">
 		<button type="submit" class="btn btn-warning"><i class="icon-edit icon-white"></i>Edit Contact</button>
 		<a href="./"><button type="button" class="btn">Cancel</button></a>

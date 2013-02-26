@@ -10,7 +10,8 @@ $required = array(
 	'contact_email',
 	'contact_phone1',
 	'contact_phone2',
-	'contact_phone3'
+	'contact_phone3',
+	'group_id'
 );
 
 // Extract form data
@@ -35,7 +36,7 @@ foreach($required as $r) {
 }
 $contact_phone = "$contact_phone1"."$contact_phone2"."$contact_phone3";
 // Add contact to DB
-$sql = "INSERT INTO contacts (contact_firstname,contact_lastname,contact_email,contact_phone) VALUES ('$contact_firstname','$contact_lastname','$contact_email',$contact_phone)";
+$sql = "INSERT INTO contacts (contact_firstname,contact_lastname,contact_email,contact_phone,group_id) VALUES ('$contact_firstname','$contact_lastname','$contact_email',$contact_phone,$group_id)";
 // connect to DB
 $conn = new mysqli(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 // Query DB

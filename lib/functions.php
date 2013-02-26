@@ -37,7 +37,7 @@ function input($name, $placeholder, $value=null, $class='') {
 * @param Array $options Array of options in the POST value => text
 * @return HTML select element
 */
-function dropdown($name, $options) {
+function dropdown($name, $options, $group_id = 0) {
 	$select = "<select name=\"$name\">";
 
 	// Add option elements to select element
@@ -46,6 +46,8 @@ function dropdown($name, $options) {
 		// is the same as the current array element, select it
 		if(isset($_SESSION['POST'] [$name]) && $_SESSION['POST'] [$name] == $value) {
 			unset($_SESSION['POST'] [$name]);
+			$selected = 'selected="selected"';
+		} else if($group_id == $value) {
 			$selected = 'selected="selected"';
 		} else {
 			$selected = '';

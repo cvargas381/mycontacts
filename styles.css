@@ -30,3 +30,8 @@ div.controls input.phone {
 div.controls input.phone2 {
 	width:33px;
 }
+
+div.controls p {
+	font-size:8pt;
+	color:#ADADAD;
+}

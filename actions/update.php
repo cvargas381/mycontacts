@@ -12,7 +12,7 @@ $conn = new mysqli('localhost','mycontacts_user','UwLnmjBZPKfVaGMA','mycontacts'
 
 // Execute query
 $contact_phone = "$contact_phone1"."$contact_phone2"."$contact_phone3";
-$sql = "UPDATE contacts SET contact_firstname='$contact_firstname', contact_lastname='$contact_lastname', contact_email='$contact_email', contact_phone='$contact_phone' WHERE contact_id={$_POST['id']} ";
+$sql = "UPDATE contacts SET contact_firstname='$contact_firstname', contact_lastname='$contact_lastname', contact_email='$contact_email', contact_phone='$contact_phone', group_id='$group_id' WHERE contact_id={$_POST['id']} ";
 $conn->query($sql);
 
 if($conn->errno >0) {
