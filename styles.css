@@ -35,3 +35,11 @@ div.controls p {
 	font-size:8pt;
 	color:#ADADAD;
 }
+
+ul li {
+	list-style:none;
+}
+
+nav .input-append button {
+	height:inherit !important;
+}
