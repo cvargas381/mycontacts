@@ -4,7 +4,6 @@ $sql = "SELECT group_name FROM groups WHERE group_id={$_GET['id']}";
 $results = $conn->query($sql);
 $group = $results->fetch_assoc();
 extract($group);
-
 $sql = "SELECT * FROM contacts WHERE group_id={$_GET['id']}";
 $results = $conn->query($sql);
 

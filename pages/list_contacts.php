@@ -15,8 +15,8 @@ if(isset($_GET['q']) && $_GET['q'] != '') {
 	$where = '';
 	$search_message = '';
 	$show_all = '';
-	$sort_f = './';
-	$sort_l = './';
+	$sort_f = './?plist_contacts&sort=firstname';
+	$sort_l = './?plist_contacts&sort=lastname';
 }
 if(isset($_GET['sort']) && $_GET['sort'] != '') {
 	$orderby = "ORDER BY contact_{$_GET['sort']}";

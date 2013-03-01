@@ -1,4 +1,3 @@
-<h2>Groups</h2>
 <?php
 // Connect to the database
 // new mysqli (host,user,password,db name)
@@ -11,10 +10,13 @@ if($conn->errno > 0) {
 	echo $conn->error;
 	die();
 }
+echo"<table class='table'><tr><th>Groups</th><th>Members</th></tr>";
 while(($group = $results->fetch_assoc()) != null) {
 extract($group);
-echo"<ul><a href='?p=groups&id=$group_id'>$group_name</a><li><span class=\"badge badge-info pull-right\">$num_contacts</span></li></ul>";
+$onclick = "return confirm('Are you sure you want to delete ')";
+echo"<tr><td><a href='?p=groups&id=$group_id'>$group_name</a></td><td><span class=\"badge badge-info\">$num_contacts</span></td><td class=\"button\"><a href=\"#\" class=\"btn btn-warning\"><i class=\"icon-edit icon-white\"></i></a><button onclick=\"$onclick\" class =\"btn btn-danger\" type=\"submit\"><i class=\"icon-trash icon-white\"</button></td></tr>";
 }
+echo"</table>";
 
 // close the DB connection
 $conn->close();	
